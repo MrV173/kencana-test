@@ -75,9 +75,43 @@ This is an explanation of each answer to the questions previously given
     ![Flowchart](./flowchart.drawio.png)
 
 3.  the answer for question no.3 is on file class_data.php. run this code in your terminal
+
     ```bash
     php class_data.php
     ```
+
+    ```php
+
+    <?php
+
+    class Data {
+    private $name;
+    private $age;
+
+    function __construct($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    function getName() {
+        return $this->name;
+    }
+
+    function isAdult() {
+        return $this->age >= 18 ? "an Adult" : "Not an Adult";
+    }
+    }
+
+    $calvin = new Data("Calvin", 13); //change the age to test the function
+    $chris = new Data("Chris", 19);   //change the age to test the function
+
+    echo "Hello, " . $calvin->getName() . "! You are " . $calvin->isAdult() . PHP_EOL;
+    echo "Hello, " . $chris->getName() . "! You are " . $chris->isAdult() . PHP_EOL;
+
+    ?>
+
+    ```
+
 4.  the answer for question no.4 i save it on file report.json. For the query i write it on query_omzet.txt
 
     ### Query SQL
