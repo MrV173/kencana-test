@@ -18,8 +18,8 @@ class Data {
     }
 }
 
-$calvin = new Data("Calvin", 13);
-$chris = new Data("Chris", 19);
+$calvin = new Data("Calvin", 13); //change the age to test the function
+$chris = new Data("Chris", 19);   //change the age to test the function
 
 echo "Hello, " . $calvin->getName() . "! You are " . $calvin->isAdult() . PHP_EOL;
 echo "Hello, " . $chris->getName() . "! You are " . $chris->isAdult() . PHP_EOL;

@@ -1,7 +1,7 @@
 SELECT
     m.merchant_name,
     o.outlet_name,
-    COALESCE(SUM(t.bill_total), 0) AS omzet_per_hari
+    COALESCE(SUM(t.bill_total), 0) AS omzet_by_day
 FROM
     Merchants m
 JOIN
