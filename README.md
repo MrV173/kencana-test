@@ -118,24 +118,23 @@ This is an explanation of each answer to the questions previously given
 
         ```sql
         SELECT
-        m.merchant_name,
-        o.outlet_name,
-        COALESCE(SUM(t.bill_total), 0) AS omzet_by_day
-
+            m.merchant_name,
+            o.outlet_name,
+            COALESCE(SUM(t.bill_total), 0) AS omzet_by_day
         FROM
-        Merchants m
+            Merchants m
         JOIN
-        Outlets o ON m.id = o.merchant_id
+            Outlets o ON m.id = o.merchant_id
         LEFT JOIN
-        Transactions t ON m.id = t.merchant_id
-        AND o.id = t.outlet_id
-        AND DATE(t.created_at) BETWEEN '2021-11-01' AND '2021-11-30'
+            Transactions t ON m.id = t.merchant_id
+                AND o.id = t.outlet_id
+                AND DATE(t.created_at) BETWEEN '2021-11-01' AND '2021-11-30'
         WHERE
-        m.user_id = (SELECT id FROM Users WHERE user_name = 'admin1')
+            m.user_id = (SELECT id FROM Users WHERE user_name = 'admin1')
         GROUP BY
-        m.merchant_name, o.outlet_name, DATE(t.created_at)
+            m.merchant_name, o.outlet_name, DATE(t.created_at)
         ORDER BY
-        m.merchant_name, o.outlet_name, DATE(t.created_at);
+            m.merchant_name, o.outlet_name, DATE(t.created_at);
 
         ```
 
