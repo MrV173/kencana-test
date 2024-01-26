@@ -50,10 +50,12 @@ This is an explanation of each answer to the questions previously given
 }
 ```
 
-2. the answer for question no.2 is on file pseudocode.txt and flowchart.drawio.png. for test the code, i make the code in
-   ![Deskripsi Gambar](./flowchart.drawio.png)
+2. the answer for question no.2 is on file pseudocode.txt and flowchart.drawio.png. for test the code, i make the code in deret_bilangan.php. run this code in your terminal
 
-   deret_bilangan.php. run this code in your terminal
+   ![Flowchart](./flowchart.drawio.png)
+   [Pseudocode][pseudocode]
+
+   [pseudocode]: ./pseudocode.txt
 
    ```bash
    php deret_bilangan.php
