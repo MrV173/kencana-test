@@ -51,10 +51,14 @@ This is an explanation of each answer to the questions previously given
 ```
 
 2. the answer for question no.2 is on file pseudocode.txt and flowchart.drawio.png. for test the code, i make the code in
+   ![Deskripsi Gambar](./flowchart.drawio.png)
+
    deret_bilangan.php. run this code in your terminal
+
    ```bash
    php deret_bilangan.php
    ```
+
 3. the answer for question no.3 is on file class_data.php. run this code in your terminal
    ```bash
    php class_data.php
