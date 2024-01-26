@@ -50,7 +50,8 @@ This is an explanation of each answer to the questions previously given
 }
 ```
 
-2.  the answer for question no.2 is on file pseudocode.txt and flowchart.drawio.png. for test the code, i make the code in deret_bilangan.php. run this code in your terminal
+2.  the answer for question no.2 is on file pseudocode.txt and flowchart.drawio.png. for test the code, i make the code in file deret_bilangan.php .
+    run this code in your terminal
 
     ```bash
     php deret_bilangan.php
@@ -65,9 +66,9 @@ This is an explanation of each answer to the questions previously given
     6. Inisialisasi selisih = angka_kedua - angka_pertama
     7. Inisialisasi variable i = 1
     8. While i <= x:
-    a. Print angka_pertama
-    b. angka_pertama = angka_pertama + selisih
-    c. i = i + 1
+        a. Print angka_pertama
+        b. angka_pertama = angka_pertama + selisih
+        c. i = i + 1
     ```
 
     ### Flowchart
