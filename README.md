@@ -124,8 +124,7 @@ This is an explanation of each answer to the questions previously given
     ### Query SQL
 
     ```sql
-
-        WITH DateRange AS (
+    WITH DateRange AS (
         SELECT '2021-11-01' AS date
         UNION SELECT '2021-11-02'
         UNION SELECT '2021-11-03'
@@ -156,28 +155,27 @@ This is an explanation of each answer to the questions previously given
         UNION SELECT '2021-11-28'
         UNION SELECT '2021-11-29'
         UNION SELECT '2021-11-30'
+    )
 
-        )
-
-        SELECT
+    SELECT
         m.merchant_name,
         o.outlet_name,
-        COALESCE(SUM(t.bill_total), 0) AS omzet_by_day,
-        FROM
+        COALESCE(SUM(t.bill_total), 0) AS omzet_by_day
+    FROM
         DateRange d
-        CROSS JOIN
+    CROSS JOIN
         Merchants m
-        JOIN
+    JOIN
         Outlets o ON m.id = o.merchant_id
-        LEFT JOIN
+    LEFT JOIN
         Transactions t ON m.id = t.merchant_id
         AND o.id = t.outlet_id
         AND DATE(t.created_at) = d.date
-        WHERE
+    WHERE
         m.user_id = (SELECT id FROM Users WHERE user_name = 'admin1')
-        GROUP BY
+    GROUP BY
         m.merchant_name, o.outlet_name, d.date
-        ORDER BY
+    ORDER BY
         m.merchant_name, o.outlet_name, d.date;
 
     ```
