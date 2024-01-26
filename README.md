@@ -139,7 +139,7 @@ This is an explanation of each answer to the questions previously given
 
     ```
 
-    ### Query results
+    ### Query results in JSON
 
 ```json
 {
