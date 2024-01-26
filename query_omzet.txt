@@ -1,18 +1,53 @@
+WITH DateRange AS (
+    SELECT '2021-11-01' AS date
+    UNION SELECT '2021-11-02'
+    UNION SELECT '2021-11-03'
+    UNION SELECT '2021-11-04'
+    UNION SELECT '2021-11-05'
+    UNION SELECT '2021-11-06'
+    UNION SELECT '2021-11-07'
+    UNION SELECT '2021-11-08'
+    UNION SELECT '2021-11-09'
+    UNION SELECT '2021-11-10'
+    UNION SELECT '2021-11-11'
+    UNION SELECT '2021-11-12'
+    UNION SELECT '2021-11-13'
+    UNION SELECT '2021-11-14'
+    UNION SELECT '2021-11-15'
+    UNION SELECT '2021-11-16'
+    UNION SELECT '2021-11-17'
+    UNION SELECT '2021-11-18'
+    UNION SELECT '2021-11-19'
+    UNION SELECT '2021-11-20'
+    UNION SELECT '2021-11-21'
+    UNION SELECT '2021-11-22'
+    UNION SELECT '2021-11-23'
+    UNION SELECT '2021-11-24'
+    UNION SELECT '2021-11-25'
+    UNION SELECT '2021-11-26'
+    UNION SELECT '2021-11-27'
+    UNION SELECT '2021-11-28'
+    UNION SELECT '2021-11-29'
+    UNION SELECT '2021-11-30'
+)
+
 SELECT
     m.merchant_name,
     o.outlet_name,
     COALESCE(SUM(t.bill_total), 0) AS omzet_by_day
 FROM
+    DateRange d
+CROSS JOIN
     Merchants m
 JOIN
     Outlets o ON m.id = o.merchant_id
 LEFT JOIN
     Transactions t ON m.id = t.merchant_id
-        AND o.id = t.outlet_id
-        AND DATE(t.created_at) BETWEEN '2021-11-01' AND '2021-11-30'
+    AND o.id = t.outlet_id
+    AND DATE(t.created_at) = d.date
 WHERE
     m.user_id = (SELECT id FROM Users WHERE user_name = 'admin1')
 GROUP BY
-    m.merchant_name, o.outlet_name, DATE(t.created_at)
+    m.merchant_name, o.outlet_name, d.date
 ORDER BY
-    m.merchant_name, o.outlet_name, DATE(t.created_at);
+    m.merchant_name, o.outlet_name, d.date;
