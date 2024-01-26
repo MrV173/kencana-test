@@ -182,8 +182,6 @@ This is an explanation of each answer to the questions previously given
 
     ```
 
----
-
     ### Query results in JSON
 
     ```json
