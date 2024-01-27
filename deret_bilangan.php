@@ -6,7 +6,7 @@ $selisih = $angka_kedua - $angka_pertama;
 $i = 1;
 while ($i <= $x) {
     
-    echo $angka_pertama . "\n";
+    echo $angka_pertama . ",";
 
     $angka_pertama += $selisih;
 
